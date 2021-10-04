@@ -1,0 +1,30 @@
+<form class="f border border-primary rounded" [formGroup]="novoUsuarioForm" (ngSubmit)="onSubmit()">
+  <br>
+  <h1 class="h3 mb-3 fw-normal text-center">Cadastre-se e divulgue seus serviços</h1>
+  <br>
+  <div class="form-floating mar">
+    <input type="text" class="form-control"  placeholder="name@example.com" formControlName="fullName">
+    <label for="floatingInput">Nome Completo</label>
+  </div>
+  <div class="form-floating mar">
+    <input type="email" class="form-control"  placeholder="name@example.com" formControlName="email">
+    <label for="floatingInput">Email</label>
+  </div>
+  <div class="form-floating mar">
+    <input type="text" class="form-control"  placeholder="name@example.com" formControlName="userName">
+    <label for="floatingInput">Nome de Usuário</label>
+  </div>
+  <div class="form-floating mar">
+    <input type="password" class="form-control"  placeholder="Password" formControlName="password">
+    <label for="floatingPassword">Senha</label>
+  </div>
+  <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
+  <div class="">
+    <br/>
+    <p>
+      Já é um usuário?<a [routerLink]="['/home']" class="form-check-label"
+        for="exampleCheck1">conecte-se</a>
+    </p>
+  </div>
+  <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+</form>

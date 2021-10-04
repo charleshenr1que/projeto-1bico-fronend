@@ -1,0 +1,21 @@
+<form class="f border border-primary rounded" (ngSubmit)="login()" #loginForm="ngForm">
+  <h1 class="h3 mb-3 fw-normal text-center">Login</h1>
+  <br>
+  <div class="form-floating mar">
+    <input type="email" class="form-control" name="userName" placeholder="name@example.com" [(ngModel)]="userName" required #campoUser="ngModel">
+    <label for="floatingInput">Email address</label>
+  </div>
+  <div class="form-floating mar">
+    <input type="password" class="form-control" name="password" placeholder="Password" [(ngModel)]="password" required #campoPassword="ngModel">
+    <label for="floatingPassword">Password</label>
+  </div>
+  <button [disabled]="loginForm.invalid" class="w-100 btn btn-lg btn-primary" type="submit">Conectar</button>
+  <div class="">
+    <br/>
+    <p>
+      Não é um usuário?<a [routerLink]="['cadastro']" class="form-check-label"
+        for="exampleCheck1">cadastre-se</a>
+    </p>
+  </div>
+  <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+</form>
