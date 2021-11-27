@@ -7,42 +7,29 @@ import { UsuarioService } from '../autenticacao/usuario/usuario.service';
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
-
-  user$:Observable<Object>;
-
-  usuario: any = {
-    announcements: '',
-    email: '',
-    fullName: '',
-    id: '',
-    password:'',
-    userName:''
-  }
+  user$!: Observable<Usuario>;
+  cabecalho: any;
+  exibirButton = false;
 
   constructor(private service: UsuarioService, private router: Router) {
-    
-  this.user$ = service.retornarUser()
-  }
-
-  ngOnInit(): void {
-    this.recuperarUser()
-  }
-  
-  recuperarUser(){
-    this.service.retornarUser().subscribe(res => {
-      this.usuario = res;
-      console.log(this.usuario.userName)
-      console.log(this.usuario)
-      console.log(res)
+    router.events.subscribe(()=>{
+      this.cabecalho = router.url.split('/')[2];
     })
   }
 
-  logout(){
-    this.router.navigate(['home'])
-    localStorage.clear();
+  ngOnInit(): void {
+    this.user$ = this.service.retornarUser();
+    console.log(this.user$)
+    console.log(this.cabecalho);
   }
 
+
+  logout() {
+    this.router.navigate(['home']);
+    this.service.logout();
+    localStorage.clear();
+  }
 }

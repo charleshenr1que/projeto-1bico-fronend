@@ -1,1 +1,12 @@
-<p>lista-post works!</p>
+<div class="container flex flex-wrap">
+  <div class="alinhar">
+    <app-new-post
+    *ngFor="let post of posts"
+      titulo="{{post.title }}"
+      urlImage="{{post.imageUrl}}"
+      estado="{{post.estado}}"
+      date="{{dataAtualFormatada(post.date)}}"
+      (click)="postDescription(post.id)"
+    ></app-new-post>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+
 #links-fixos{
     /*você pode alterar largura usando width*/
     margin-left: 10px;
@@ -12,4 +13,29 @@
 .lista{
     width: 100%;
     height: 100vh;
+}
+
+.yellow{
+    background-color:blueviolet;
+    
+}
+.categora{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.list-inline{
+    display: inline-block;
+    margin: 5px;
+}
+.circulo{ 
+    margin: 20px;
+}
+
+.mat-si{
+    height:48px !important;
+    width:48px !important;
+    font-size:48px !important;
 }

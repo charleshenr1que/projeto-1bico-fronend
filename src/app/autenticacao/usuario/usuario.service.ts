@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { TokenService } from '../token/token.service';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -13,9 +14,9 @@ export class UsuarioService {
 
   constructor(private httpCliente: HttpClient, private token: TokenService) {}
 
-  retornarUser() {
+  retornarUser(): Observable<Usuario> {
     let user = this.token.retornarToken();
-    return this.httpCliente.get(`http://localhost:8080/users?userName=${user}`);
+    return this.httpCliente.get<Usuario>(`http://localhost:8080/users?userName=${user}`);
   }
 
   salvarToken(token: string) {

@@ -1,84 +1,79 @@
-<header class="p-3 bg-dark text-white">
-  <div class="container">
-    <div class="
-        d-flex
-        flex-wrap
-        align-items-center
-        justify-content-center justify-content-lg-start
-      ">
-      <a href="/" class="
-          d-flex
-          align-items-center
-          mb-2 mb-lg-0
-          text-white text-decoration-none
-        ">
-        <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-          <use xlink:href="#bootstrap" />
-        </svg>
-      </a>
-
-      <ul class="
-          nav
-          col-12 col-lg-auto
-          me-lg-auto
-          mb-2
-          justify-content-center
-          mb-md-0
-        ">
-        <li><a href="#" class="nav-link px-2 text-light">Home</a></li>
-      </ul>
-
-      <div class="text-end">
-        <button routerLink="/home" type="button" class="btn btn-outline-light me-2">
-          Login
-        </button>
-        <button routerLink="/home/cadastro" type="button" class="btn btn-primary">
-          Sign-up
-        </button>
-        <button (click)="logout()" type="button" class="btn btn-primary">
-         Logout
-        </button>
-      </div>
-    </div>
-  </div>
-</header>
-<section class="py-5 text-center container">
+<section class="py-5 text-center yellow" [hidden]="cabecalho == 'create-post' || cabecalho == 'my-posts'">
   <div class="row py-lg-10">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">Adicionar um style cabuloso aqui pra ficar no bolado</h1>
-
-      <div class="input-group mb-3" >
-        <input type="search" class="form-control" placeholder="O que você procura?" aria-label="Recipient's username" aria-describedby="button-addon2">
+      <div class="input-group mb-3">
+        <input
+          type="search"
+          class="form-control"
+          placeholder="O que você procura?"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
         <div class="input-group-append">
           <button class="btn btn-primary" type="button" id="button-addon2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
-          viewBox="0 0 16 16">
-          <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-        </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-search"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+              />
+            </svg>
           </button>
-
         </div>
       </div>
     </div>
     <div>
-      <div *ngIf="usuario; else login">
-        <p >
-         Usuário conectado {{usuario.userName}}
-        </p >
-        
+      <div class="categoria">
+        <ul>
+          <li class="list-inline">
+            <div class="circulo">
+              <mat-icon class="mat-si">construction</mat-icon>
+            </div>
+            <i>Construção</i>
+          </li>
+          <li class="list-inline">
+            <div class="circulo">
+              <mat-icon class="mat-si">local_florist</mat-icon>
+            </div>
+            <i>Jardinagem
+            </i>
+          </li>
+          <li class="list-inline">
+            <div class="circulo">
+              <mat-icon class="mat-si">color_lens</mat-icon>
+            </div>
+            <i>Arte
+            </i>
+          </li>
+          <li class="list-inline">
+            <div class="circulo"> 
+              <mat-icon class="mat-si">directions_car
+              </mat-icon>
+            </div>
+            <i>Motorista
+            </i>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="user$ | async as usuario">
+        <div *ngIf="usuario.fullName; else login">
+
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 <section>
   <router-outlet></router-outlet>
 </section>
-<div id="links-fixos" >
-    <button type="button" class="btn btn-warning" id="fixo">Anunciar</button>
-</div>
+
 <ng-template #login>
   <span class="navbar-text">
-    <a>Não tem usuário conectado</a>
   </span>
 </ng-template>

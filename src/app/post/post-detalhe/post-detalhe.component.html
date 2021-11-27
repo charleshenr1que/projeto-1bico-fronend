@@ -1,0 +1,40 @@
+   
+<section>
+   <br>
+   <div class="organizar">
+
+   <div *ngIf="post$ | async as post">
+   <div>
+      <img class="imagem" src="data:image/png;base64,{{imageUrl}}" alt=""/>
+   </div>  
+   <div>
+      <h1>Titulo</h1>
+      <p>{{post.title}}</p>
+   </div>
+   <div>
+      <h1>Categoria</h1>
+      <p>{{post.categoria}}</p>
+   </div>
+   <div>
+      <h1>Descrição</h1>
+      <div class="form-floating mar">
+         <textarea style="resize: none"class="form-control" id="exampleFormControlTextarea1" formControlName="descricao"  style="height: 100px;" [disabled]="true" >
+       {{post.descricao}}</textarea>
+       </div>
+   </div>
+
+   <div class="alinhar">
+      <div class="espaco">
+         <h1>Estado</h1>
+         <p>{{post.estado}}</p>
+      </div>
+      <div class="espaco">
+         <h1>Cidade</h1>
+         <p>{{post.cidade}}</p>
+      </div>
+   </div>
+
+</div>
+
+</div>
+</section>

@@ -1,0 +1,18 @@
+<section>
+  <br>
+<h1 style="text-align: center;">Minhas Publicações</h1>
+  <div id="conteudo">
+    <app-new-post
+      *ngFor="let post of posts"
+      titulo="{{ post.title }}"
+      descricao="{{ post.descricao }}"
+      urlImage="{{ post.imageUrl }}"
+      estado="{{post.estado}}"
+      [exibirButton]="false"
+      id="{{ post.id }}"
+      userId="{{post.author.id}}"
+      annoucementId="{{post.id}}"
+    >
+    </app-new-post>
+  </div>
+</section>

@@ -29,8 +29,8 @@ export class CadastroComponent implements OnInit {
   onSubmit() {
     this.novoUserService
       .createUser(this.novoUsuarioForm.value)
-      .subscribe(() => {});
-    console.log(this.novoUsuarioForm.value);
-    console.log(this.user);
+      .subscribe((data) => {
+        alert('Usuario cadastrado');
+      });
   }
 }

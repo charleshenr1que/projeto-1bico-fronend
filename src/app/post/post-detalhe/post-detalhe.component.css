@@ -1,0 +1,17 @@
+.organizar{
+    display: flex;
+    justify-content: center;
+}
+.alinhar{
+    display: flex;
+    flex-grow: initial;
+    margin: 10px;
+}
+
+.espaco{
+    margin: 20px;
+}
+.imagem{
+    width: 600px;
+    height: 400px;
+}

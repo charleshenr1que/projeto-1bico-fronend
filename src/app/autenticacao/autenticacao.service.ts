@@ -27,7 +27,7 @@ export class AutenticacaoService {
         }
       ).pipe(
         tap((res) => {          
-          console.log('ok');
+          
       })
       );
   }

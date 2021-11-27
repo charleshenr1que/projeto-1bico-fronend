@@ -1,0 +1,44 @@
+<section>
+    <div class="form-post">
+      <h1>Welcome</h1>
+      <form class="f border rounded" [formGroup]="editAnuncio" (ngSubmit)="onSubmit()">
+        <br>
+        <h1 class="h3 mb-3 fw-normal text-center">Cadastre-se e divulgue seus serviços</h1>
+        <br>
+        <div id="imgExample">
+          <img id="preview" src="">
+        </div>
+        <div class="form-floating mar">
+          <input type="text" class="form-control"  placeholder="name@example.com" formControlName="title">
+          <label for="floatingInput">Titulo</label>
+        </div>
+        <div class="form-floating mar">
+          <input type="text" class="form-control"  placeholder="name@example.com" formControlName="categoria">
+          <label for="floatingInput">Categoria</label>
+        </div>
+        <div class="form-floating mar">
+          <input type="text" class="form-control"  placeholder="name@example.com" formControlName="cidade">
+          <label for="floatingInput">Cidade</label>
+        </div>
+        <div class="form-floating mar">
+          <input type="text" class="form-control"  placeholder="Password" formControlName="estado">
+          <label for="floatingPassword">Estado</label>
+        </div>
+        <div class="form-floating mar">
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <label for="exampleFormControlTextarea1">Descrição</label>
+        </div>
+        <div class="form-group col-md-12">
+          <label for="inputZip">Selecione uma imagem</label>
+          <input type="file" type="file" class="file-input"
+          (change)="onFileSelected($event)" #fileUpload>
+        </div>
+        <button [hidden]="exibirButtonEdit == false" class="w-100 btn btn-lg btn-primary" type="submit">Anunciar</button>
+        <button [hidden]="exibirButtonEdit == true" class="w-100 btn btn-lg btn-primary" type="submit">Editar</button>
+        <p class="mt-5 mb-3 text-muted">&copy; 2021–2021</p>
+      </form>
+    </div> 
+   
+  </section>
+  
+  

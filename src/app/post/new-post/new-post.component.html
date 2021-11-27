@@ -1,1 +1,29 @@
-<p>new-post works!</p>
+<div class="item">
+    <div class="centro">
+        <div class="col">
+          <div class="card shadow-sm tamanho">
+            <img  class="bd-placeholder-img card-img-top" width="200" height="200" src="data:image/png;base64,{{urlImage}}" alt=""/>
+            <div class="card-body">
+              <h1 class="card-text">{{titulo}}</h1>
+              <br>
+              <p>Estado: {{estado}}</p>
+              <p class="teste">{{date}}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <div class="example-button-container">
+                    <button [hidden]="exibirButton != false" (click)="edit()" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                      <mat-icon>edit</mat-icon>
+                    </button>
+                  </div>
+                </div>
+                <div class="example-button-container">
+                  <button [hidden]="exibirButton != false" (click)="deletar()" mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</div>
+
