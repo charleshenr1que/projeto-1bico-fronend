@@ -16,7 +16,11 @@ export class ListaPostComponent implements OnInit {
   @Input()
   myposts!: Posts
 
-  constructor(private service: PostService, private router: Router) { }
+  constructor(private service: PostService, private router: Router) { 
+    router.events.subscribe(()=>{
+      this.listarPosts()
+    })
+  }
 
   ngOnInit(): void {
     this.listarPosts()
