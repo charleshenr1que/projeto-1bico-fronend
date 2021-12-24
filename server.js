@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const PORT = process.env.POPRT || 8080;
+const PORT = process.env.PORT || 8080;
 
 app.use(express.static(__dirname + '/dist/umbico'));
 app.get('/*', (req, res) => {
