@@ -27,6 +27,7 @@
     "bootstrap": "^5.1.1",
     "bootstrap-icons": "^1.5.0",
     "estados-br": "^0.0.5",
+    "express": "^4.17.2",
     "font-awesome": "^4.7.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
