@@ -1,19 +1,12 @@
-//Importar o express
-const express = ('express');
-//Iniciar o express
-
+const express = require('express');
 const app = express();
-// NOme da pasta no dist que sera feito o build
+const PORT = process.env.POPRT || 8080;
 
-const appName = '1bico';
-// local onde o build ira gerar os arquivos
-const outputPath = `${__dirname}/dist/${appName}`;
-
-// seta o diretorio de build para servir o conteudo Angular
-app.use(express.static(outputPath));
-//redirecionar qualquer para o index.html
+app.use(express.static(__dirname + '/dist/umbico'));
 app.get('/*', (req, res) => {
-    res.sendFile(`${outputPath}/index.html`);
+    res.sendFile(__dirname + '/dist/umbico/index.html');
+})
+
+app.listen(PORT, () => {
+    console.log('Servidor iniciado na pasta' + PORT)
 });
-//Ouvir a porta que o heroku disponibilizar
-app.listen(process.env.PORT);
